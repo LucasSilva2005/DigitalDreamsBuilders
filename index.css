@@ -54,6 +54,10 @@ nav {
   align-items: center;
   justify-content: space-around;
 }
+.cadastro{
+  background-color: #D3D3D3;
+  border-radius: 5%;
+}
 
 nav a {
   color: #fff;
