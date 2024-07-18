@@ -1,0 +1,74 @@
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ background-image: linear-gradient(45deg, cyan, purple);
+ margin: 0;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.login-container {
+ background-color: rgba(0, 0, 0, 0.8);
+ padding: 40px;
+ border-radius: 10px;
+ color: white;
+ text-align: center;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ max-width: 400px;
+ width: 80%;
+}
+
+form {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.form-group {
+ margin-bottom: 20px;
+ text-align: left;
+}
+
+label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+ width: 100%;
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
+ font-size: 16px;
+ background-color: rgba(255, 255, 255, 0.1);
+ color: white;
+ box-sizing: border-box;
+ transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+ background-color: rgba(255, 255, 255, 0.3);
+ outline: none;
+}
+
+button {
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 16px;
+ transition: background-color 0.3s ease;
+}
+
+button:hover {
+ background-color: #45a049;
+}
+
+button:active {
+ background-color: #3e8e41;
+}
