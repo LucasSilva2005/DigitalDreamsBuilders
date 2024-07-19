@@ -10,6 +10,11 @@ body {
 
 .login-container {
  background-color: rgba(0, 0, 0, 0.8);
+ --glow-spread-color: rgba(0, 247, 255, 0.781);
+ --enhanced-glow-color: rgb(0, 0, 0);
+ --btn-color: rgb(255, 255, 255);
+ border: 0.25em solid var(--glow-color);
+ color: var(--glow-color);
  padding: 40px;
  border-radius: 10px;
  color: white;
@@ -35,8 +40,8 @@ label {
  margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
+input[type='text'],
+input[type='password'] {
  width: 100%;
  padding: 10px;
  border: none;
@@ -48,27 +53,57 @@ input[type="password"] {
  transition: background-color 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+input[type='text']:focus,
+input[type='password']:focus {
  background-color: rgba(255, 255, 255, 0.3);
  outline: none;
 }
 
-button {
- background-color: #4CAF50;
- color: white;
- padding: 14px 20px;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- font-size: 16px;
- transition: background-color 0.3s ease;
+.button {
+ --glow-color: rgb(176, 252, 255);
+ --glow-spread-color: rgba(123, 251, 255, 0.781);
+ --enhanced-glow-color: rgb(206, 255, 255);
+ --btn-color: rgb(61, 127, 136);
+ border: 0.25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em 0.25em var(--glow-color),
+  0 0 4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
+ text-shadow: 0 0 0.5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
 }
 
-button:hover {
- background-color: #45a049;
+.button::after {
+ pointer-events: none;
+ content: '';
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: 0.7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
 }
 
-button:active {
- background-color: #3e8e41;
+.button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 0.5em 0.1em var(--glow-color),
+  0 0 1em 0.5em var(--glow-spread-color),
+  inset 0 0 0.5em 0.1em var(--glow-color);
+}
+
+.button:active {
+ box-shadow: 0 0 0.4em 0.1em var(--glow-color),
+  0 0 1.5em 1em var(--glow-spread-color),
+  inset 0 0 0.3em 0.1em var(--glow-color);
 }
