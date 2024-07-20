@@ -65,8 +65,8 @@ input[type='password']:focus {
  --enhanced-glow-color: rgb(206, 255, 255);
  --btn-color: rgb(61, 127, 136);
  border: 0.25em solid var(--glow-color);
- margin: 2% 40% 4% 4%;
- padding: 1em 3em;
+ padding: 1em 5em;
+ margin: 4%;
  color: var(--glow-color);
  font-size: 15px;
  font-weight: bold;
@@ -104,56 +104,6 @@ input[type='password']:focus {
 }
 
 .button:active {
- box-shadow: 0 0 0.4em 0.1em var(--glow-color),
-  0 0 1.5em 1em var(--glow-spread-color),
-  inset 0 0 0.3em 0.1em var(--glow-color);
-}
-
-.login{
- --glow-color: rgb(176, 252, 255);
- --glow-spread-color: rgba(123, 251, 255, 0.781);
- --enhanced-glow-color: rgb(206, 255, 255);
- --btn-color: rgb(61, 127, 136);
- border: 0.25em solid var(--glow-color);
- padding: 1em 3em;
- margin: 4%;
- color: var(--glow-color);
- font-size: 15px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- outline: none;
- box-shadow: 0 0 0.5em 0.1em var(--glow-color),
-  0 0 1em 0.5em var(--glow-spread-color),
-  inset 0 0 0.5em 0.1em var(--glow-color);
- text-shadow: 0 0 0.25em var(--glow-color);
- position: relative;
- transition: all 0.3s;
-}
-
-.login::after{
- pointer-events: none;
- content: '';
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(1em);
- opacity: 0.7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
-}
-
-.login:hover{
- color: var(--btn-color);
- background-color: var(--glow-color);
- box-shadow: 0 0 0.5em 0.1em var(--glow-color),
-  0 0 1em 0.5em var(--glow-spread-color),
-  inset 0 0 0.5em 0.1em var(--glow-color);
-}
-
-.login:active{
  box-shadow: 0 0 0.4em 0.1em var(--glow-color),
   0 0 1.5em 1em var(--glow-spread-color),
   inset 0 0 0.3em 0.1em var(--glow-color);
