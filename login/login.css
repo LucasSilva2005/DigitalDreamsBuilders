@@ -31,19 +31,21 @@ form {
 }
 
 .form-group {
- margin-bottom: 20px;
+margin: 3%;
  text-align: left;
+ width: 80%;
 }
 
 label {
  display: block;
- margin-bottom: 5px;
+ margin-bottom: 1% 5% 1% 5%;
 }
 
 input[type='text'],
 input[type='password'] {
  width: 100%;
  padding: 10px;
+ text-decoration: none;
  border: none;
  border-radius: 5px;
  font-size: 16px;
@@ -65,8 +67,9 @@ input[type='password']:focus {
  --enhanced-glow-color: rgb(206, 255, 255);
  --btn-color: rgb(61, 127, 136);
  border: 0.25em solid var(--glow-color);
- padding: 1em 5em;
- margin: 4%;
+ padding: 1em 3em;
+ margin-top: 5%;
+ text-decoration: none;
  color: var(--glow-color);
  font-size: 15px;
  font-weight: bold;
@@ -77,7 +80,6 @@ input[type='password']:focus {
   0 0 1em 0.5em var(--glow-spread-color),
   inset 0 0 0.5em 0.1em var(--glow-color);
  text-shadow: 0 0 0.25em var(--glow-color);
- position: relative;
  transition: all 0.3s;
 }
 
