@@ -9,31 +9,35 @@ body {
 }
 
 .login-container {
- background-color: rgba(0, 0, 0, 0.8);
  color: var(--glow-color);
- padding: 40px;
+ padding: 10px 20px;
  border-radius: 10px;
- color: white;
+ color: #ffffff;
  text-align: center;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- max-width: 500px;
- width: 100%;
+ box-shadow: 4px 4px 8px 5px rgba(0, 0, 0, 0.1);
+ background: transparent;
+ backdrop-filter: blur(10px);
+ max-width: 400px;
 }
 
-form {
+form { 
  display: flex;
  flex-direction: column;
  align-items: center;
 }
 
 .form-group {
- margin-bottom: 20px;
- text-align: left;
+ margin: 1%;
+ text-align:left; 
+ width: 100%;
+}
+.form-group i{
+text-align: left;
 }
 
 label {
  display: block;
- margin-bottom: 5px;
+ margin: 1% 5% 1%, 5%;
 }
 
 input[type='text'],
@@ -55,28 +59,37 @@ input[type='password']:focus {
  outline: none;
 }
 
+.checklists__cadastro{
+  display: flex;
+  flex-direction: column;
+}
+
+.checklists__cadastro .valid{
+  color: green;
+}
+
 .button,
 .login {
+  text-decoration: none;
  --glow-color: rgb(176, 252, 255);
  --glow-spread-color: rgba(123, 251, 255, 0.781);
  --enhanced-glow-color: rgb(206, 255, 255);
  --btn-color: rgb(61, 127, 136);
  border: 0.25em solid var(--glow-color);
  padding: 1em 3em;
- margin: 4%;
+ margin:4% 0% 0% 0%;
  color: var(--glow-color);
  font-size: 15px;
  font-weight: bold;
  background-color: var(--btn-color);
  border-radius: 1em;
- outline: none;
  box-shadow: 0 0 0.5em 0.1em var(--glow-color),
   0 0 1em 0.5em var(--glow-spread-color),
   inset 0 0 0.5em 0.1em var(--glow-color);
  text-shadow: 0 0 0.25em var(--glow-color);
- position: relative;
- transition: all 0.3s;
- display: inline-block;
+ transition: all 0.9s;
+ display: flex;
+ justify-content: space-between;
 }
 
 .button::after,

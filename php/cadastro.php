@@ -14,12 +14,17 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $password = $_POST['password'];
+
+    if (empty($name) || empty($email) || empty($password)) {
+        echo "Todos os campos são obrigatórios.";
+        exit;
+    }
 
     // Verificar se o email já está registrado
-    $sql = "SELECT * FROM users WHERE email = ?";
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -29,13 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Este email já está registrado.";
     } else {
         // Inserir novo usuário
-        $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+        $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $name, $email, $password);
+        $stmt->bind_param("sss", $name, $email, $passwordHash);
         if ($stmt->execute()) {
             echo "Cadastro realizado com sucesso!";
         } else {
-            echo "Erro: " . $sql . "<br>" . $conn->error;
+            echo "Erro: " . $stmt->error;
         }
     }
 

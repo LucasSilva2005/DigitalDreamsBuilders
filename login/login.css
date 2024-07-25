@@ -89,10 +89,8 @@ input[type='password']:focus {
  left: 0;
  height: 100%;
  width: 100%;
- background-color: var(--glow-spread-color);
  filter: blur(1em);
  opacity: 0.7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
 }
 
 .button:hover {
