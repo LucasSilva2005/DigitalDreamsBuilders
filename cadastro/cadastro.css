@@ -1,124 +1,136 @@
 body {
- font-family: Arial, Helvetica, sans-serif;
- background-image: linear-gradient(45deg, cyan, purple);
- margin: 0;
- height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(45deg, cyan, purple);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-container {
- color: var(--glow-color);
- padding: 10px 20px;
- border-radius: 10px;
- color: #ffffff;
- text-align: center;
- box-shadow: 4px 4px 8px 5px rgba(0, 0, 0, 0.1);
- background: transparent;
- backdrop-filter: blur(10px);
- max-width: 400px;
+  color: var(--glow-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #f1f1f1;
+  text-align: center;
+  box-shadow: 4px 4px 8px 5px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
 }
 
-form { 
- display: flex;
- flex-direction: column;
- align-items: center;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-group {
- margin: 1%;
- text-align:left; 
- width: 100%;
+  padding: 10px;
+  margin: 1%;
+  text-align: left;
+  width: 100%;
 }
-.form-group i{
-text-align: left;
+
+.icon {
+  border-radius: 7px;
+  padding: 0 10px;
+  border: 1px solid #f1f1f1;
+  align-items: center;
+  display: flex;
+  color: rgba(0, 0, 0, 0.733);
+}
+
+.icon input {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.icon input::placeholder {
+  color: #f1f1f1;
 }
 
 label {
- display: block;
- margin: 1% 5% 1%, 5%;
+  display: block;
+  margin: 1% 5% 1%, 5%;
 }
 
 input[type='text'],
 input[type='password'] {
- width: 100%;
- padding: 10px;
- border: none;
- border-radius: 5px;
- font-size: 16px;
- background-color: rgba(255, 255, 255, 0.1);
- color: white;
- box-sizing: border-box;
- transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  color: #f1f1f1;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
 input[type='text']:focus,
 input[type='password']:focus {
- background-color: rgba(255, 255, 255, 0.3);
- outline: none;
+  outline: none;
 }
 
-.checklists__cadastro{
-  display: flex;
-  flex-direction: column;
+.checklists__cadastro {
+  color: #f1f1f1;
 }
 
-.checklists__cadastro .valid{
-  color: green;
+.checklists__cadastro .valid {
+  color: rgba(0, 255, 85, 0.842);
 }
 
 .button,
 .login {
   text-decoration: none;
- --glow-color: rgb(176, 252, 255);
- --glow-spread-color: rgba(123, 251, 255, 0.781);
- --enhanced-glow-color: rgb(206, 255, 255);
- --btn-color: rgb(61, 127, 136);
- border: 0.25em solid var(--glow-color);
- padding: 1em 3em;
- margin:4% 0% 0% 0%;
- color: var(--glow-color);
- font-size: 15px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- box-shadow: 0 0 0.5em 0.1em var(--glow-color),
-  0 0 1em 0.5em var(--glow-spread-color),
-  inset 0 0 0.5em 0.1em var(--glow-color);
- text-shadow: 0 0 0.25em var(--glow-color);
- transition: all 0.9s;
- display: flex;
- justify-content: space-between;
+  --glow-color: rgb(176, 252, 255);
+  --glow-spread-color: rgba(123, 251, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 255);
+  --btn-color: rgb(61, 127, 136);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  margin: 4% 0% 0% 0%;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  box-shadow: 0 0 0.5em 0.1em var(--glow-color),
+    0 0 1em 0.5em var(--glow-spread-color),
+    inset 10px var(--glow-color);
+  transition: all 0.5s;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button::after,
 .login::after {
- pointer-events: none;
- content: '';
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(1em);
- opacity: 0.7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(1em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
 }
 
 .button:hover,
 .login:hover {
- color: var(--btn-color);
- background-color: var(--glow-color);
- box-shadow: 0 0 0.5em 0.1em var(--glow-color),
-  0 0 1em 0.5em var(--glow-spread-color),
-  inset 0 0 0.5em 0.1em var(--glow-color);
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 0.5em 0.1em var(--glow-color),
+    0 0 1em 0.5em var(--glow-spread-color),
+    inset 1px var(--glow-color);
 }
 
 .button:active,
 .login:active {
- box-shadow: 0 0 0.4em 0.1em var(--glow-color),
-  0 0 1.5em 1em var(--glow-spread-color),
-  inset 0 0 0.3em 0.1em var(--glow-color);
+  box-shadow: 0 0 0.4em 0.1em var(--glow-color),
+    0 0 1.5em 1em var(--glow-spread-color),
+    inset 0 0 0.3em 0.1em var(--glow-color);
 }
