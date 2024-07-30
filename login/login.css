@@ -1,108 +1,118 @@
 body {
- font-family: Arial, Helvetica, sans-serif;
- background-image: linear-gradient(45deg, cyan, purple);
- margin: 0;
- height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(45deg, cyan, purple);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-container {
- background-color: rgba(0, 0, 0, 0.8);
- --glow-spread-color: rgba(0, 247, 255, 0.781);
- --enhanced-glow-color: rgb(0, 0, 0);
- --btn-color: rgb(255, 255, 255);
- border: 0.25em solid var(--glow-color);
- color: var(--glow-color);
- padding: 40px;
- border-radius: 10px;
- color: white;
- text-align: center;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- max-width: 400px;
- width: 80%;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 2px solid 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 4px 8px 10px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  max-width: 400px;
+  width: 100%;
+}
+h1{
+  color: #f1f1f1;
+}
+.icon {
+  border-radius: 7px;
+  padding: 0 10px;
+  border: 1px solid #f1f1f1;
+  align-items: center;
+  display: flex;
+  color: rgba(0, 0, 0, 0.733);
+}
+
+.icon input {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.icon input::placeholder {
+  color: #f1f1f1;
 }
 
 form {
- display: flex;
- flex-direction: column;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-group {
- margin-bottom: 20px;
- text-align: left;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
- display: block;
- margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 input[type='text'],
 input[type='password'] {
- width: 100%;
- padding: 10px;
- border: none;
- border-radius: 5px;
- font-size: 16px;
- background-color: rgba(255, 255, 255, 0.1);
- color: white;
- box-sizing: border-box;
- transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
 input[type='text']:focus,
 input[type='password']:focus {
- background-color: rgba(255, 255, 255, 0.3);
- outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
 }
 
 .button {
- --glow-color: rgb(176, 252, 255);
- --glow-spread-color: rgba(123, 251, 255, 0.781);
- --enhanced-glow-color: rgb(206, 255, 255);
- --btn-color: rgb(61, 127, 136);
- border: 0.25em solid var(--glow-color);
- padding: 1em 5em;
- margin: 4%;
- color: var(--glow-color);
- font-size: 15px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- outline: none;
- box-shadow: 0 0 0.5em 0.1em var(--glow-color),
-  0 0 1em 0.5em var(--glow-spread-color),
-  inset 0 0 0.5em 0.1em var(--glow-color);
- text-shadow: 0 0 0.25em var(--glow-color);
- position: relative;
- transition: all 0.3s;
-}
-
-.button::after {
- pointer-events: none;
- content: '';
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- filter: blur(1em);
- opacity: 0.7;
+  --glow-color: rgb(176, 252, 255);
+  --glow-spread-color: rgba(123, 251, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 255);
+  --btn-color: rgb(61, 127, 136);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 5em;
+  margin: 4%;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 1rem(--glow-color),
 }
 
 .button:hover {
- color: var(--btn-color);
- background-color: var(--glow-color);
- box-shadow: 0 0 0.5em 0.1em var(--glow-color),
-  0 0 1em 0.5em var(--glow-spread-color),
-  inset 0 0 0.5em 0.1em var(--glow-color);
+  transition: 0.6s;
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 1rem 0.1em var(--glow-color),
 }
 
 .button:active {
- box-shadow: 0 0 0.4em 0.1em var(--glow-color),
-  0 0 1.5em 1em var(--glow-spread-color),
-  inset 0 0 0.3em 0.1em var(--glow-color);
+  box-shadow: 1rem var(--glow-color),
+    1rem var(--glow-spread-color),
+    inset 1rem var(--glow-color);
+}
+
+.cad {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+}
+.cad:hover{
+  transition: 0.4s;
+  --enhanced-glow-color: rgb(206, 255, 255);
+  color: var(--enhanced-glow-color)
 }
