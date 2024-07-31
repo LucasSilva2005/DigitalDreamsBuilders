@@ -16,7 +16,7 @@ document.getElementById('password').addEventListener('input', function () {
   uppercase.classList.remove('valid')
  }
 
- if (/[@#-_]/.test(password)) {
+ if (/[!@#$%^&*(),.?":{}|<>_-]/.test(password)) {
   specialChar.classList.add('valid')
  } else {
   specialChar.classList.remove('valid')
