@@ -2,23 +2,33 @@ body {
  margin: 0%;
  width: 100%;
  height: 100%;
- font-family: "arial";
+ font-family: 'Montserrat', sans-serif;
  font-optical-sizing: auto;
  font-style: normal;
- font-size: 16px;
+ font-size: 18px;
+}
+
+:root{
+ --medidas-divs: 200px;
+ --cor-divs: linear-gradient(to right, #c5afd5, #8710e9);
+ --cor-botao: #00abfa;
 }
 
 header {
- flex-wrap: nowrap;
  width: 100%;
- height: 100px;
+ height: 60px;
  background-color: darkgray;
  display: flex;
  align-items: center;
  justify-content: space-between;
 }
 
+a {
+ text-decoration: none;
+}
+
 #logo-container {
+ margin-left: 0.5rem;
  display: flex;
  align-items: center;
 }
@@ -33,18 +43,60 @@ header {
  text-decoration: none;
 }
 
-nav {
- flex-wrap: nowrap;
+form {
  display: flex;
- align-items: right;
+ padding: 8px 10px;
+ gap: 5px;
+ margin: 0 auto;
 }
 
+.search-bar {
+ padding: 5px;
+ width: 16rem;
+ border: none;
+ border-radius: 5px 0 0 5px;
+ font-size: 16px;
+}
+
+.search-button {
+ padding: 5px 10px;
+ border: none;
+ border-radius: 0 5px 5px 0;
+ background-color: #575757;
+ color: white;
+ cursor: pointer;
+ font-size: 16px;
+}
+
+.search-button i {
+ pointer-events: none;
+}
+
+.search-input {
+ border: none;
+ outline: none;
+ padding: 10px;
+ flex: 1;
+}
+
+.search-icon {
+ font-size: 18px;
+ color: #aaa;
+ cursor: pointer;
+}
+
+.search-icon:hover {
+ color: #000;
+}
+
+nav {
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
 
 nav a {
- white-space: nowrap;
- flex-wrap: nowrap;
- margin: 1% 0% 1% 1%;
- align-items: right;
+ margin-right: 1rem;
  color: #fff;
  text-decoration: none;
 }
@@ -53,3 +105,62 @@ nav a.active {
  color: #fff;
 }
 
+img {
+    float: left;
+    margin-right: 10px;
+}
+
+.container {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 25px;
+ display: flex;
+ flex-direction: column;
+
+ & .projetos1 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos2 {  
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos3 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos4 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+}
+
+.setup1{
+ margin: 1.5% 1% 1% 1%;
+ border-radius: 6%;
+}
+
+.button{
+ background-color: var(--cor-botao);
+ color: #ffffff;
+ border-radius: 5%;
+}
