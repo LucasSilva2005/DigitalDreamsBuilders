@@ -8,23 +8,11 @@ body {
  font-size: 18px;
 }
 
-:root{
+:root {
  --medidas-divs: 200px;
  --cor-divs: linear-gradient(to right, #c5afd5, #8710e9);
  --cor-botao: #00abfa;
-}
-
-header {
- width: 100%;
- height: 60px;
- background-color: darkgray;
- display: flex;
- align-items: center;
- justify-content: space-between;
-}
-
-a {
- text-decoration: none;
+ --cor-borda: #15b5ff;
 }
 
 #logo-container {
@@ -43,6 +31,23 @@ a {
  text-decoration: none;
 }
 
+header {
+ width: 100%;
+ height: 100px;
+ background-color: darkgray;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+a {
+ text-decoration: none;
+}
+
+h5 {
+    font-size: 14px;
+}
+
 form {
  display: flex;
  padding: 8px 10px;
@@ -50,49 +55,12 @@ form {
  margin: 0 auto;
 }
 
-.search-bar {
- padding: 5px;
- width: 16rem;
- border: none;
- border-radius: 5px 0 0 5px;
- font-size: 16px;
-}
-
-.search-button {
- padding: 5px 10px;
- border: none;
- border-radius: 0 5px 5px 0;
- background-color: #575757;
- color: white;
- cursor: pointer;
- font-size: 16px;
-}
-
-.search-button i {
- pointer-events: none;
-}
-
-.search-input {
- border: none;
- outline: none;
- padding: 10px;
- flex: 1;
-}
-
-.search-icon {
- font-size: 18px;
- color: #aaa;
- cursor: pointer;
-}
-
-.search-icon:hover {
- color: #000;
-}
-
 nav {
+ gap: 100px;
+ margin-left: 12rem;
  display: flex;
  align-items: center;
- justify-content: space-around;
+ justify-content: space-between;
 }
 
 nav a {
@@ -106,6 +74,71 @@ nav a.active {
 }
 
 img {
-    float: left;
-    margin-right: 10px;
+ float: left;
+ margin-right: 10px;
+}
+
+.principal {
+ background-color: #000;
+ display: flex;
+ width: 100%;
+ height: 100px;
+}
+
+.container {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 25px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
+ & .projetos1 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos2 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos3 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos4 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+}
+
+.setup1 {
+ margin: 0.9% 1% 1% 1%;
+ border-radius: 6%;
+}
+
+.button {
+ background-color: var(--cor-botao);
+ color: #ffffff;
+ border-radius: 5%;
+ padding: 5px;
+ border: 3px solid var(--cor-borda)
 }
