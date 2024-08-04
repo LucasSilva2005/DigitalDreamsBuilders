@@ -1,0 +1,41 @@
+/* Estilos para dispositivos com largura de 868px ou menos */
+@media (max-width: 868px) {
+ body {
+   font-size: 16px; /* Ajuste do tamanho da fonte */
+ }
+
+ header {
+   flex-direction: column; /* Header em coluna */
+   height: auto; /* Altura ajustável */
+   padding: 10px 0; /* Espaçamento interno */
+ }
+
+ #logo-container {
+   margin-left: 0; /* Remove a margem à esquerda */
+   margin-bottom: 10px; /* Espaçamento inferior */
+   justify-content: center; /* Centraliza o conteúdo */
+ }
+
+ nav {
+   margin-left: 0;
+   gap: 20px; /* Espaçamento menor entre os itens */
+   justify-content: center; /* Centraliza o conteúdo */
+   flex-wrap: wrap; /* Permite que os itens quebrem linha */
+ }
+
+ form {
+   flex-direction: column; /* Coloca os itens do formulário em coluna */
+   width: 100%; /* Largura total do formulário */
+   padding: 0; /* Remove padding */
+   gap: 10px; /* Espaçamento maior entre os campos */
+ }
+
+ .container {
+   font-size: 20px; /* Tamanho da fonte ajustado */
+ }
+
+ .projetos1, .projetos2, .projetos3, .projetos4 {
+   width: 100%; /* Largura total */
+   margin: 5px 0; /* Ajusta a margem para melhor espaçamento em mobile */
+  }
+ }
