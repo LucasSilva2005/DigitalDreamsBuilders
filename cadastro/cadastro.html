@@ -1,40 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="cadastro.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <title>Cadastro - Digital Dreams Builders</title>
- </head>
- <body>
-  <div class="login-container">
-   <h1>Cadastro</h1>
-   <form action="/php/cadastro.php" method="post">
-    <div class="form-group">
-     <label for="name">Nome Completo</label>
-     <i class="fa-solid fa-user"></i>
-     <input type="text" id="name" name="name" placeholder="Nome completo" />
-    </div>
-    <div class="form-group">
-     <label for="email">Email</label>
-     <i class="fa-solid fa-envelope"></i>
-     <input type="text" id="email" name="email" placeholder="Email" />
-    </div>
-    <div class="form-group">
-     <label for="password">Senha</label>
-     <i class="fa-solid fa-lock"></i>
-     <input type="password" id="password" name="password" placeholder="Senha" />
-    </div>
-    <div class="checklists__cadastro">
-     <div id="minLength">A senha deverá ter no mínimo 8 caracteres</div>
-     <div id="uppercase">A senha deverá ter no mínimo uma letra maiúscula</div>
-     <div id="specialChar">A senha deverá ter no mínimo um caractere especial ( @, #, -, _)</div>
-    </div>
-    <button class="button" type="submit">Cadastrar</button>
-    <a class="login" href="/login/login.html">Login</a>
-   </form>
-  </div>
-  <script src="/js/confirm.js"></script>
- </body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cadastro.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Cadastro - Digital Dreams Builders</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Cadastro</h1>
+        <form id="signup-form">
+            <div class="form-group">
+                <div class="icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Nome completo" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" id="email" name="email" placeholder="Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Senha" />
+                </div>
+            </div>
+            <div class="checklists_cadastro">
+                <div id="minLength">A senha deve ter no mínimo 8 caracteres</div>
+                <div id="uppercase">incluindo pelo menos uma letra maiúscula</div>
+                <div id="specialChar">e um caractere especial (@, #, -, ).</div>
+            </div>
+            <button type="submit" class="button">Cadastrar</button>
+            <a class="login" href="/login/login.html">Login</a>
+        </form>
+    </div>    
+</body>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+
+<!-- Firebase Configuration -->
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI",
+        authDomain: "digital-dreams-builders.firebaseapp.com",
+        databaseURL: "https://digital-dreams-builders-default-rtdb.firebaseio.com",
+        projectId: "digital-dreams-builders",
+        storageBucket: "digital-dreams-builders.appspot.com",
+        messagingSenderId: "116614795521",
+        appId: "1:116614795521:web:5c1b2432f9c55cb93e4b00"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                console.log('Usuário cadastrado:', userCredential.user);
+                // Salvando dados no Firestore
+                return db.collection('users').doc(userCredential.user.uid).set({
+                    email: email,
+                    createdAt: new Date()
+                });
+            })
+            .then(() => {
+                console.log('Dados do usuário salvos no Firestore');
+            })
+            .catch((error) => {
+                console.error('Erro ao cadastrar:', error.message);
+            });
+    });
+</script>
+
+<script src="/js/confirm.js"></script>
+
 </html>
