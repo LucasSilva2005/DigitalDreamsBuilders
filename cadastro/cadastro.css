@@ -124,3 +124,14 @@ input[type='password']:focus {
     0 0 1.5em 1em var(--glow-spread-color),
     inset 0 0 0.3em 0.1em var(--glow-color);
 }
+.forgot-password {
+  display: block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
