@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
  margin: 0;
  padding: 0;
@@ -35,6 +36,27 @@ header {
 }
 
 #logo-container {
+=======
+body {
+ margin: 0%;
+ width: 100%;
+ height: 100%;
+ font-family: 'Montserrat', sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ font-size: 18px;
+}
+
+:root {
+ --medidas-divs: 200px;
+ --cor-divs: linear-gradient(to right, #c5afd5, #8710e9);
+ --cor-botao: #00abfa;
+ --cor-borda: #15b5ff;
+}
+
+#logo-container {
+ margin-left: 0.5rem;
+>>>>>>> 5747dfbbad38837491e41780f2a012d5f7fa169a
  display: flex;
  align-items: center;
 }
@@ -46,6 +68,7 @@ header {
 
 #logo-container span {
  color: #fff;
+<<<<<<< HEAD
 }
 
 nav {
@@ -58,13 +81,125 @@ nav {
 
 nav a {
  color: #fff;
+=======
+ text-decoration: none;
+}
+
+header {
+ width: 100%;
+ height: 100px;
+ background-color: darkgray;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+a {
+ text-decoration: none;
+}
+
+h5 {
+ font-size: 14px;
+}
+
+form {
+ display: flex;
+ padding: 8px 10px;
+ gap: 5px;
+ margin: 0 auto;
+}
+
+nav {
+ gap: 100px;
+ margin-left: 12rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+nav a {
+ margin-right: 1rem;
+ color: #fff;
+ text-decoration: none;
+>>>>>>> 5747dfbbad38837491e41780f2a012d5f7fa169a
 }
 
 nav a.active {
  color: #fff;
 }
 
+<<<<<<< HEAD
 .container{
  display: flex;
  place-items: center;
+=======
+img {
+ float: left;
+ margin-right: 10px;
+}
+
+.principal {
+ background-color: #000;
+ display: flex;
+ width: 100%;
+ height: 100px;
+}
+
+.container {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 25px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
+ & .projetos1 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos2 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos3 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos4 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+}
+
+.setup1 {
+ margin: 0.9% 1% 1% 1%;
+ border-radius: 6%;
+}
+
+.button {
+ background-color: var(--cor-botao);
+ color: #ffffff;
+ border-radius: 5%;
+ padding: 5px;
+ border: 3px solid var(--cor-borda);
+>>>>>>> 5747dfbbad38837491e41780f2a012d5f7fa169a
 }

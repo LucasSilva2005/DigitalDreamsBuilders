@@ -68,7 +68,7 @@ input[type='password'] {
   border: none;
   border-radius: 7px;
   font-size: 15px;
-  color: #f1f1f1;
+  color: #000000;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
 }
@@ -79,7 +79,7 @@ input[type='password']:focus {
 }
 
 .checklists_cadastro {
-  color: #f1f1f1;
+  color: #a72727;
 }
 
 .checklists_cadastro .valid {
