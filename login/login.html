@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Cadastro - Digital Dreams Builders</title>
+    <title>Login - Digital Dreams Builders</title>
 </head>
 
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form>
+        <form id="login-form">
             <div class="form-group">
                 <div class="icon">
                     <i class="fa-solid fa-envelope"></i>
@@ -26,7 +26,49 @@
             </div>
             <button class="button" type="submit">Login</button>
             <a class="cad" href="/cadastro/cadastro.html">Cadastre-se</a>
+            <div id="error-message" style="color: red; margin-top: 10px;"></div>
         </form>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI",
+            authDomain: "digital-dreams-builders.firebaseapp.com",
+            databaseURL: "https://digital-dreams-builders-default-rtdb.firebaseio.com",
+            projectId: "digital-dreams-builders",
+            storageBucket: "digital-dreams-builders.appspot.com",
+            messagingSenderId: "116614795521",
+            appId: "1:116614795521:web:5c1b2432f9c55cb93e4b00"
+        };
+
+        // Inicializando Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Adicionando evento ao formulário de login
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Login bem-sucedido
+                    window.location.href = "/cliente/client.html"; // Redireciona para a página do cliente
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    if (errorCode === 'auth/wrong-password') {
+                        errorMessage.textContent = 'Senha incorreta. Tente novamente.';
+                    } else if (errorCode === 'auth/user-not-found') {
+                        errorMessage.textContent = 'Conta não encontrada. Crie uma conta primeiro.';
+                    } else {
+                        errorMessage.textContent = 'Erro ao efetuar login. Tente novamente.';
+                    }
+                });
+        });
+    </script>
 </body>
 </html>
