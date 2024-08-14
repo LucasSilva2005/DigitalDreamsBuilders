@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="cadastro.css" />
-  <link
-   rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <title>Cadastro - Digital Dreams Builders</title>
- </head>
- <body>
+</head>
+<body>
   <div class="login-container">
-   <h1>Cadastro</h1>
-   <form id="signup-form">
-    <div class="form-group">
-     <label for="email">Email</label>
-     <i class="fa-solid fa-envelope"></i>
-     <input type="text" id="email" name="email" placeholder="Email" />
-    </div>
-    <div class="form-group">
-     <label for="password">Senha</label>
-     <i class="fa-solid fa-lock"></i>
-     <input type="password" id="password" name="password" placeholder="Senha" />
-    </div>
-    <div class="checklists__cadastro">
-     <div id="minLength">A senha deverá ter no mínimo 8 caracteres</div>
-     <div id="uppercase">A senha deverá ter no mínimo uma letra maiúscula</div>
-     <div id="specialChar">
-      A senha deverá ter no mínimo um caractere especial ( @, #, -, _)
-     </div>
-    </div>
-    <button class="button" type="submit">Cadastrar</button>
-    <a class="login" href="/login/login.html">Login</a>
-   </form>
+    <h1>Cadastro</h1>
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <i class="fa-solid fa-envelope"></i>
+        <input type="text" id="email" name="email" placeholder="Email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="password" name="password" placeholder="Senha" />
+      </div>
+      <div class="checklists__cadastro">
+        <div id="minLength">A senha deverá ter no mínimo 8 caracteres</div>
+        <div id="uppercase">A senha deverá ter no mínimo uma letra maiúscula</div>
+        <div id="specialChar">A senha deverá ter no mínimo um caractere especial ( @, #, -, _)</div>
+      </div>
+      <button class="button" type="submit">Cadastrar</button>
+      <a class="login" href="/login/login.html">Login</a>
+    </form>
   </div>
+
+  <script src="/js/confirm.js"></script>
   <script type="module">
-   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js'
-   import {
-    getAuth,
-    createUserWithEmailAndPassword
-   } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js'
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
+    import {
+      getAuth,
+      createUserWithEmailAndPassword
+    } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
 
-   // Sua configuração do Firebase
-   const firebaseConfig = {
-    apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
-    authDomain: 'digital-dreams-builders.firebaseapp.com',
-    databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
-    projectId: 'digital-dreams-builders',
-    storageBucket: 'digital-dreams-builders.appspot.com',
-    messagingSenderId: '116614795521',
-    appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
-   }
+    // Sua configuração do Firebase
+    const firebaseConfig = {
+      apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
+      authDomain: 'digital-dreams-builders.firebaseapp.com',
+      databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
+      projectId: 'digital-dreams-builders',
+      storageBucket: 'digital-dreams-builders.appspot.com',
+      messagingSenderId: '116614795521',
+      appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
+    };
 
-   // Inicializa o Firebase
-   const app = initializeApp(firebaseConfig)
-   const auth = getAuth(app)
+    // Inicializa o Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-   // Função para cadastro de usuário
-   document
-    .getElementById('signup-form')
-    .addEventListener('submit', function (event) {
-     event.preventDefault() // Previne o envio do formulário e recarregamento da página
+    // Função para cadastro de usuário
+    document.getElementById('signup-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Previne o envio do formulário e recarregamento da página
 
-     const email = document.getElementById('email').value
-     const password = document.getElementById('password').value
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
 
-     createUserWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
-       const user = userCredential.user
-       alert('Cadastro realizado com sucesso!')
-      })
-      .catch(error => {
-       const errorCode = error.code
-       const errorMessage = error.message
-       alert(`Erro: ${errorMessage}`)
-      })
-    })
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          const user = userCredential.user;
+          alert('Cadastro realizado com sucesso!');
+        })
+        .catch(error => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(`Erro: ${errorMessage}`);
+        });
+    });
   </script>
- </body>
+</body>
 </html>
