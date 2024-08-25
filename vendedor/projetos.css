@@ -1,0 +1,62 @@
+img {
+ float: left;
+ margin-right: 10px;
+}
+
+.container {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 25px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
+ & .projetos1 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos2 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos3 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+ & .projetos4 {
+  float: left;
+  gap: 10px;
+  margin: 1%;
+  border-radius: 3%;
+  width: 98%;
+  height: var(--medidas-divs);
+  background: var(--cor-divs);
+ }
+}
+
+.setup1 {
+ margin: 0.9% 1% 1% 1%;
+ border-radius: 6%;
+}
+
+.button {
+ background-color: var(--cor-botao);
+ color: #ffffff;
+ border-radius: 5%;
+ padding: 5px;
+ border: 3px solid var(--cor-borda);
+}

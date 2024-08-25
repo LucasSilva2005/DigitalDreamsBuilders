@@ -1,0 +1,19 @@
+@import url(/cliente/header.css);
+@import url(/cliente/search.css);
+@import url(/cliente/produtos.css);
+
+body {
+ margin: 0%;
+ width: 100%;
+ height: 100%;
+ font-family: 'Montserrat', sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ font-size: 18px;
+}
+
+:root{
+ --medidas-divs: 200px;
+ --cor-divs: linear-gradient(to right, #c5afd5, #8710e9);
+ --cor-botao: #00abfa;
+}

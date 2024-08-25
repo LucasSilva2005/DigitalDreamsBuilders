@@ -34,18 +34,22 @@
     </div>
     <button class="button" type="submit">Login</button>
     <a class="cad" href="/cadastro/cadastro.html">Cadastre-se</a>
-    <a class="forgot-password" href="/cadastro/forgot-password.html" id="forgot-password-link"
+    <a
+     class="forgot-password"
+     href="/cadastro/forgot-password.html"
+     id="forgot-password-link"
      >Esqueci minha senha</a
     >
    </form>
   </div>
 
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js"></script>
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
-    import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
-
+    import {
+      getAuth,
+      signInWithEmailAndPassword
+    } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
+  
     // Configuração do Firebase
     const firebaseConfig = {
       apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
@@ -56,36 +60,38 @@
       messagingSenderId: '116614795521',
       appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
     };
-
+  
     // Inicializa o Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
+  
     // Função para login de usuário
-    document.getElementById('login-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Previne o envio do formulário e recarregamento da página
-
+    function loginUser() {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-
+  
       signInWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          // Login bem-sucedido
-          alert('Login realizado com sucesso!');
-          window.location.href = 'C:\Users\Lucas\OneDrive\Área de Trabalho\Nova pasta (3)\DigitalDreamsBuilders/index.html'; // Redireciona para a página principal
+        .then((userCredential) => {
+          // Usuário autenticado com sucesso
+          const user = userCredential.user;
+          alert('Login bem-sucedido: ' + user.email);
+          // Redirecionar para a página principal
+          window.location.href = 'index.html'; // Substitua "index.html" pela URL correta
         })
-        .catch(error => {
+        .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+  
           if (errorCode === 'auth/user-not-found') {
-            alert('Você não tem uma conta cadastrada. Por favor, crie uma conta.');
+            alert('Usuário não encontrado. Por favor, cadastre-se antes de fazer login.');
           } else if (errorCode === 'auth/wrong-password') {
-            alert('Senha incorreta. Verifique e tente novamente.');
+            alert('Senha incorreta. Tente novamente.');
           } else {
-            alert(`Erro: ${errorMessage}`);
+            alert(errorMessage);
           }
         });
-    });
+    }
   </script>
+  
  </body>
 </html>
