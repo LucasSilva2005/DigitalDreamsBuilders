@@ -1,0 +1,136 @@
+#projects-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 32px;
+}
+
+#projects-container h1 {
+ text-align: center;
+ margin-bottom: 32px;
+}
+
+#projects-container > div {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+#projects-container > div > div {
+ margin-bottom: 32px;
+}
+
+#projects-container div > div > h6 {
+ font-size: 1rem;
+ text-align: center;
+}
+
+#projects-container div > div > p {
+ font-size: 1rem;
+ text-align: center;
+}
+
+#projects-container div > div > img {
+ width: 100%;
+ height: 350px;
+ object-fit: cover;
+}
+
+#about-cta-container {
+ display: flex;
+ background-image: url("./assets/about-cta-bg.jpeg");
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ justify-content: flex-start;
+}
+
+#about-cta-container > div {
+ display: flex;
+ position: relative;
+}
+
+#about-cta-text-overlay {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #fff;
+ opacity: 0.5;
+ z-index: 1;
+}
+
+#about-cta-text-wrapper {
+ padding: 32px;
+ z-index: 2;
+}
+
+#about-cta-text-wrapper h1 {
+ color: purple;
+}
+
+#about-cta-text-wrapper p {
+ color: purple;
+ margin: 16px 0;
+ font-weight: bold;
+ text-align: left;
+}
+
+#about-cta-text-wrapper a {
+ display: inline-block;
+ background-color: purple;
+ padding: 8px 16px;
+ border-radius: 5px;
+ text-transform: uppercase;
+ text-align: center;
+ font-weight: bold;
+ font-size: 0.8rem;
+ color: #fff;
+}
+
+#how-it-works-cta-container {
+ display: flex;
+ flex-direction: column;
+ padding: 32px;
+}
+
+.how-it-works-cta-item-container {
+ display: flex;
+ flex-direction: column;
+ padding: 16px;
+ border: 1px solid rgba(0, 0, 0, 0.1);
+ border-radius: 5px;
+ margin-bottom: 16px;
+}
+
+.how-it-works-cta-item-container > img {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+}
+
+.how-it-works-cta-item-container > div > h6 {
+ font-size: 1.2rem;
+ text-align: left;
+ padding: 8px 0;
+}
+
+.how-it-works-cta-item-container > div > ul {
+ list-style-type: none;
+}
+
+.how-it-works-cta-item-container > div > ul li {
+ font-size: 1rem;
+ margin-bottom: 8px;
+}
+
+.how-it-works-cta-item-container > div > a {
+ font-size: 1rem;
+ color: #000;
+ text-transform: uppercase;
+}
+
+#how-it-works-cta-reversed-item {
+ flex-direction: column-reverse;
+}

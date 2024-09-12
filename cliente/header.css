@@ -16,8 +16,8 @@ h5 {
 }
 
 nav {
- gap: 100px;
- margin-left: 12rem;
+ gap: 90px;
+ margin-left: 5rem;
  display: flex;
  align-items: center;
  justify-content: space-between;
@@ -33,7 +33,12 @@ nav a.active {
  color: #fff;
 }
 
+i{
+ margin: 0, 20px, 0, 0;
+}
+
 img {
  float: left;
  margin-right: 10px;
 }
+

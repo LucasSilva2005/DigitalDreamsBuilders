@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil do Usuário</h1>
+        
+        <!-- Seção de Foto de Perfil -->
+        <div class="profile-section">
+            <h2>Foto de Perfil</h2>
+            <img id="profile-pic" src="default-profile.jpg" alt="Foto de Perfil">
+            <input type="file" id="file-input" accept="image/*">
+            <button id="upload-btn">Alterar Foto</button>
+        </div>
+        
+        <!-- Seção de Alterar Senha -->
+        <div class="profile-section">
+            <h2>Alterar Senha</h2>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <label for="current-password">Senha Atual:</label>
+                    <input type="password" id="current-password" name="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nova Senha:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <button type="submit">Alterar Senha</button>
+            </form>
+        </div>
+        
+        <!-- Seção de Anunciar Produtos -->
+        <div class="profile-section">
+            <h2>Anunciar Produtos</h2>
+            <form id="post-product-form">
+                <div class="form-group">
+                    <label for="product-name">Nome do Produto:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Descrição:</label>
+                    <textarea id="product-description" name="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Imagem do Produto:</label>
+                    <input type="file" id="product-image" name="product-image" accept="image/*">
+                </div>
+                <button type="submit">Anunciar Produto</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

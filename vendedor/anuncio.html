@@ -1,99 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postar Projeto - Digital Dreams Builders</title>
+    <title>Postar Anúncio</title>
     <link rel="stylesheet" href="anuncio.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <h1>Digital Dreams Builders</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Meus Projetos</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Formulário de Postagem -->
-    <main>
-        <h2>Postar um Novo Projeto</h2>
-        <form id="project-form">
-
-            <!-- Título do Projeto -->
+    <div class="form-container">
+        <h1>Postar Anúncio</h1>
+        <form id="form-postar-anuncio">
             <div class="form-group">
-                <label for="project-title">Título do Projeto:</label>
-                <input type="text" id="project-title" name="project-title" required>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" required>
             </div>
-
-            <!-- Descrição do Projeto -->
             <div class="form-group">
-                <label for="project-description">Descrição do Projeto:</label>
-                <textarea id="project-description" name="project-description" rows="5" required></textarea>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
             </div>
-
-            <!-- Categoria -->
             <div class="form-group">
-                <label for="project-category">Categoria:</label>
-                <select id="project-category" name="project-category" required>
-                    <option value="móveis">Móveis</option>
-                    <option value="decoração">Decoração</option>
-                    <option value="interiores">Interiores</option>
-                    <option value="outros">Outros</option>
-                </select>
+                <label for="preco">Preço</label>
+                <input type="number" id="preco" name="preco" step="0.01" required>
             </div>
-
-            <!-- Upload de Imagens -->
             <div class="form-group">
-                <label for="project-images">Imagens do Projeto:</label>
-                <input type="file" id="project-images" name="project-images" multiple accept="image/*">
-                <div id="image-preview"></div>
+                <label for="imagem">Imagem</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
             </div>
-
-            <!-- Tags -->
-            <div class="form-group">
-                <label for="project-tags">Tags:</label>
-                <input type="text" id="project-tags" name="project-tags" placeholder="Ex: moderno, minimalista">
-            </div>
-
-            <!-- Preço Estimado -->
-            <div class="form-group">
-                <label for="project-price">Preço Estimado:</label>
-                <input type="number" id="project-price" name="project-price" required>
-            </div>
-
-            <!-- Data de Entrega Estimada -->
-            <div class="form-group">
-                <label for="project-deadline">Data de Entrega Estimada:</label>
-                <input type="date" id="project-deadline" name="project-deadline" required>
-            </div>
-
-            <!-- Botões -->
-            <div class="form-buttons">
-                <button type="button" onclick="previewProject()">Pré-Visualizar</button>
-                <button type="submit">Publicar Projeto</button>
-            </div>
-
+            <button type="submit">Postar Anúncio</button>
         </form>
-
-        <!-- Seção para exibir os projetos -->
-        <h2>Meus Projetos Postados</h2>
-        <div id="posted-projects"></div>
-
-    </main>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Digital Dreams Builders. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="anuncio.js"></script>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

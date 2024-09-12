@@ -1,0 +1,11 @@
+footer {
+ width: 100%;
+ background-color: darkgray;
+ padding: 8px 16px;
+ margin-top: 16px;
+}
+
+footer small {
+ color: #fff;
+ font-weight: bold;
+}

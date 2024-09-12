@@ -16,8 +16,8 @@ h5 {
 }
 
 nav {
- gap: 100px;
- margin-left: 12rem;
+ gap: 90px;
+ margin-left: 6rem;
  display: flex;
  align-items: center;
  justify-content: space-between;

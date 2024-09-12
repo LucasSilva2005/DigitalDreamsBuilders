@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Oculto com CSS</title>
+    <style>
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 200px;
+        }
+
+        nav details {
+            background-color: #444;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        nav ul li {
+            margin: 5px 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <details>
+        <summary>Menu 1</summary>
+        <ul>
+            <li><a href="#page1">Página 1</a></li>
+            <li><a href="#page2">Página 2</a></li>
+            <li><a href="#page3">Página 3</a></li>
+        </ul>
+    </details>
+    <details>
+        <summary>Menu 2</summary>
+        <ul>
+            <li><a href="#page4">Página 4</a></li>
+            <li><a href="#page5">Página 5</a></li>
+            <li><a href="#page6">Página 6</a></li>
+        </ul>
+    </details>
+    <details>
+        <summary>Menu 3</summary>
+        <ul>
+            <li><a href="#page7">Página 7</a></li>
+            <li><a href="#page8">Página 8</a></li>
+            <li><a href="#page9">Página 9</a></li>
+        </ul>
+    </details>
+</nav>
+
+</body>
+</html>

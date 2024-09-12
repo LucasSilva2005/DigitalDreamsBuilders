@@ -32,7 +32,7 @@
       />
      </div>
     </div>
-    <button class="button" type="submit">Login</button>
+    <a href="/cliente/client.html" class="button" type="submit">Login</a>
     <a class="cad" href="/cadastro/cadastro.html">Cadastre-se</a>
     <a
      class="forgot-password"
@@ -42,56 +42,5 @@
     >
    </form>
   </div>
-
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
-    import {
-      getAuth,
-      signInWithEmailAndPassword
-    } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
-  
-    // Configuração do Firebase
-    const firebaseConfig = {
-      apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
-      authDomain: 'digital-dreams-builders.firebaseapp.com',
-      databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
-      projectId: 'digital-dreams-builders',
-      storageBucket: 'digital-dreams-builders.appspot.com',
-      messagingSenderId: '116614795521',
-      appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
-    };
-  
-    // Inicializa o Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-  
-    // Função para login de usuário
-    function loginUser() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-  
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Usuário autenticado com sucesso
-          const user = userCredential.user;
-          alert('Login bem-sucedido: ' + user.email);
-          // Redirecionar para a página principal
-          window.location.href = 'index.html'; // Substitua "index.html" pela URL correta
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-  
-          if (errorCode === 'auth/user-not-found') {
-            alert('Usuário não encontrado. Por favor, cadastre-se antes de fazer login.');
-          } else if (errorCode === 'auth/wrong-password') {
-            alert('Senha incorreta. Tente novamente.');
-          } else {
-            alert(errorMessage);
-          }
-        });
-    }
-  </script>
-  
  </body>
 </html>

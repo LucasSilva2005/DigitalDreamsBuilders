@@ -1,153 +1,63 @@
-/* styles.css */
-
-/* Estilos Globais */
 body {
  font-family: Arial, sans-serif;
- background-color: #f2f2f2;
+ background-color: #f4f4f4;
  margin: 0;
  padding: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+
+.form-container {
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ max-width: 400px;
+ width: 100%;
+}
+
+h1 {
+ text-align: center;
+ margin-bottom: 20px;
+ font-size: 24px;
  color: #333;
 }
 
-header {
- background-color: #00a6e0;
- color: white;
- padding: 10px 20px;
- display: flex;
- justify-content: space-between;
- align-items: center;
-}
-
-header .logo h1 {
- margin: 0;
-}
-
-header nav ul {
- list-style: none;
- margin: 0;
- padding: 0;
- display: flex;
-}
-
-header nav ul li {
- margin-left: 20px;
-}
-
-header nav ul li a {
- color: white;
- text-decoration: none;
- font-weight: bold;
-}
-
-main {
- padding: 20px;
- max-width: 800px;
- margin: auto;
-}
-
-h2 {
- color: #00a6e0;
- margin-bottom: 20px;
-}
-
-/* Estilo do Formulário */
 .form-group {
  margin-bottom: 15px;
 }
 
-.form-group label {
+label {
  display: block;
  margin-bottom: 5px;
  font-weight: bold;
 }
 
-.form-group input[type="text"],
-.form-group textarea,
-.form-group select,
-.form-group input[type="number"],
-.form-group input[type="date"] {
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea {
  width: 100%;
- padding: 8px;
- border: 1px solid #ccc;
- border-radius: 4px;
- box-sizing: border-box;
-}
-
-.form-group input[type="file"] {
- border: none;
-}
-
-.form-buttons {
- display: flex;
- justify-content: space-between;
- margin-top: 20px;
-}
-
-.form-buttons button {
- background-color: #00a6e0;
- color: white;
- border: none;
- padding: 10px 15px;
- border-radius: 4px;
- cursor: pointer;
- font-weight: bold;
-}
-
-.form-buttons button:hover {
- background-color: #007aaf;
-}
-
-/* Estilo dos Projetos Postados */
-#posted-projects {
- margin-top: 40px;
-}
-
-.project {
- background-color: white;
- border: 1px solid #ccc;
- padding: 15px;
- margin-bottom: 15px;
- border-radius: 4px;
-}
-
-.project h3 {
- margin-top: 0;
- color: #333;
-}
-
-.project p {
- margin: 5px 0;
-}
-
-.project .images img {
- max-width: 100px;
- margin-right: 10px;
- border: 1px solid #ccc;
- border-radius: 4px;
-}
-
-.project button {
- background-color: #00a6e0;
- color: white;
- border: none;
- padding: 5px 10px;
- border-radius: 4px;
- cursor: pointer;
- font-weight: bold;
-}
-
-.project button:hover {
- background-color: #007aaf;
-}
-
-/* Rodapé */
-footer {
- background-color: #333;
- color: white;
- text-align: center;
  padding: 10px;
- position: relative;
- bottom: 0;
- width: 100%;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 16px;
 }
 
+button {
+ width: 100%;
+ padding: 10px;
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ font-size: 16px;
+ cursor: pointer;
+ transition: background-color 0.3s;
+}
+
+button:hover {
+ background-color: #0056b3;
+}

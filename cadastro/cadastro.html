@@ -14,64 +14,57 @@
       <div class="form-group">
         <label for="email">Email</label>
         <i class="fa-solid fa-envelope"></i>
-        <input type="text" id="email" name="email" placeholder="Email" />
+        <input type="text" id="email" name="email" placeholder="Email" required />
       </div>
       <div class="form-group">
         <label for="password">Senha</label>
         <i class="fa-solid fa-lock"></i>
-        <input type="password" id="password" name="password" placeholder="Senha" />
+        <input type="password" id="password" name="password" placeholder="Senha" required />
       </div>
+      
+      <!-- Requisitos da senha -->
       <div class="checklists__cadastro">
         <div id="minLength">A senha deverá ter no mínimo 8 caracteres</div>
         <div id="uppercase">A senha deverá ter no mínimo uma letra maiúscula</div>
-        <div id="specialChar">A senha deverá ter no mínimo um caractere especial ( @, #, -, _)</div>
+        <div id="specialChar">A senha deverá ter no mínimo um caractere especial (@, #, -, _)</div>
       </div>
+      
       <button class="button" type="submit">Cadastrar</button>
       <a class="login" href="/login/login.html">Login</a>
     </form>
   </div>
-
-  <script src="/js/confirm.js"></script>
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
-    import {
-      getAuth,
-      createUserWithEmailAndPassword
-    } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
-
-    // Sua configuração do Firebase
-    const firebaseConfig = {
-      apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
-      authDomain: 'digital-dreams-builders.firebaseapp.com',
-      databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
-      projectId: 'digital-dreams-builders',
-      storageBucket: 'digital-dreams-builders.appspot.com',
-      messagingSenderId: '116614795521',
-      appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
-    };
-
-    // Inicializa o Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    // Função para cadastro de usuário
-    document.getElementById('signup-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Previne o envio do formulário e recarregamento da página
-
-      const email = document.getElementById('email').value;
+  
+  <script>
+    // Função de validação da senha
+    function isPasswordValid(password) {
+      const minLength = password.length >= 8;
+      const uppercase = /[A-Z]/.test(password);
+      const specialChar = /[@#-_]/.test(password);
+  
+      // Exibir ou esconder as mensagens de validação
+      document.getElementById('minLength').style.color = minLength ? 'green' : 'red';
+      document.getElementById('uppercase').style.color = uppercase ? 'green' : 'red';
+      document.getElementById('specialChar').style.color = specialChar ? 'green' : 'red';
+  
+      return minLength && uppercase && specialChar;
+    }
+  
+    // Lidar com o envio do formulário
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Impede o envio automático do formulário
+  
       const password = document.getElementById('password').value;
-
-      createUserWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          const user = userCredential.user;
-          alert('Cadastro realizado com sucesso!');
-        })
-        .catch(error => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          alert(`Erro: ${errorMessage}`);
-        });
+  
+      // Validar a senha
+      if (!isPasswordValid(password)) {
+        alert('A senha não atende aos requisitos.');
+        return; // Impede o cadastro se a senha for inválida
+      }
+  
+      // Se a senha for válida, aqui você pode adicionar o código para enviar os dados (Firebase, backend, etc.)
+      alert('Cadastro realizado com sucesso!');
     });
   </script>
+  
 </body>
 </html>
