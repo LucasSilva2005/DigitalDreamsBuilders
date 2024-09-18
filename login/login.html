@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="login.css" />
-  <link
-   rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
-  <title>Login - Digital Dreams Builders</title>
- </head>
 
- <body>
-  <div class="login-container">
-   <h1>Login</h1>
-   <form id="login-form">
-    <div class="form-group">
-     <div class="icon">
-      <i class="fa-solid fa-envelope"></i>
-      <input type="text" id="email" name="email" placeholder="Email" />
-     </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <title>Login - Digital Dreams Builders</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <div class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" id="email" name="email" placeholder="Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Senha" />
+                </div>
+            </div>
+            <a href="/cliente/client.html" class="button" type="submit">Login</a>
+            <a class="cad" href="/cadastro/cadastro.html">Cadastre-se</a>
+            <a class="cad" href="/cadastro/recuperar_senha.html" id="forgot-password-link">Esqueci minha
+                senha</a>
+        </form>
     </div>
-    <div class="form-group">
-     <div class="icon">
-      <i class="fa-solid fa-lock"></i>
-      <input
-       type="password"
-       id="password"
-       name="password"
-       placeholder="Senha"
-      />
-     </div>
-    </div>
-    <a href="/cliente/client.html" class="button" type="submit">Login</a>
-    <a class="cad" href="/cadastro/cadastro.html">Cadastre-se</a>
-    <a
-     class="forgot-password"
-     href="/cadastro/forgot-password.html"
-     id="forgot-password-link"
-     >Esqueci minha senha</a
-    >
-   </form>
-  </div>
- </body>
+</body>
+
 </html>

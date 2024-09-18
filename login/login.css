@@ -76,6 +76,7 @@ input[type='password']:focus {
 }
 
 .button {
+  text-decoration: none;
   --glow-color: rgb(176, 252, 255);
   --glow-spread-color: rgba(123, 251, 255, 0.781);
   --enhanced-glow-color: rgb(206, 255, 255);

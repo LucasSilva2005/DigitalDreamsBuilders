@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="cadastro.css" />
+    <link rel="stylesheet" href="recuperar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Redefinir Senha - Digital Dreams Builders</title>
 </head>
@@ -12,14 +12,15 @@
         <h1>Redefinir Senha</h1>
         <form id="reset-password-form">
             <div class="form-group">
-                <label for="reset-email">Email</label>
-                <i class="fa-solid fa-envelope"></i>
                 <input type="text" id="reset-email" name="reset-email" placeholder="Email para redefinição" />
             </div>
             <button class="button" type="submit">Enviar Link de Redefinição</button>
             <a class="back" href="/login/login.html">Voltar ao Login</a>
         </form>
     </div>
+
+
+
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
         import { getAuth, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';

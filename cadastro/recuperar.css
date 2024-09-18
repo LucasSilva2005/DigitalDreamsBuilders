@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(45deg, cyan, purple);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Estilos para o container principal */
+.reset-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.reset-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #f1f1f1;
+}
+
+/* Estilos para o formulário */
+#reset-password-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#reset-password-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+#reset-password-form input {
+  background-color: #f1f1f1;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 17px;
+}
+
+#reset-password-form input:focus {
+  border-color: #f1f1f1;
+  outline: none;
+}
+
+/* Estilos para o botão */
+.button {
+  text-decoration: none;
+  --glow-color: rgb(176, 252, 255);
+  --glow-spread-color: rgba(123, 251, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 255);
+  --btn-color: rgb(61, 127, 136);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 5em;
+  margin: 2%;
+  color: var(--glow-color);
+  font-size: 13px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 1rem(--glow-color),
+}
+
+
+.button:hover {
+  transition: 0.6s;
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 1rem 0.1em var(--glow-color),
+}
+/* Estilos para o link de voltar */
+.back {
+  --glow-color: rgb(176, 252, 255);
+  --glow-spread-color: rgba(123, 251, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 255);
+  --btn-color: rgb(61, 127, 136);
+  display: block;
+  margin-top: 15px;
+  color: var(--glow-color);
+  text-decoration: none;
+  font-size: 17px;
+}
+

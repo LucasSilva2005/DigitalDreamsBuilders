@@ -1,62 +1,66 @@
 img {
- float: left;
- margin-right: 10px;
+    float: left;
+    margin-right: 10px;
 }
 
 .container {
- font-family: Arial, Helvetica, sans-serif;
- font-size: 25px;
- display: flex;
- flex-direction: column;
- justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
- & .projetos1 {
-  float: left;
-  gap: 10px;
-  margin: 1%;
-  border-radius: 3%;
-  width: 98%;
-  height: var(--medidas-divs);
-  background: var(--cor-divs);
- }
- & .projetos2 {
-  float: left;
-  gap: 10px;
-  margin: 1%;
-  border-radius: 3%;
-  width: 98%;
-  height: var(--medidas-divs);
-  background: var(--cor-divs);
- }
- & .projetos3 {
-  float: left;
-  gap: 10px;
-  margin: 1%;
-  border-radius: 3%;
-  width: 98%;
-  height: var(--medidas-divs);
-  background: var(--cor-divs);
- }
- & .projetos4 {
-  float: left;
-  gap: 10px;
-  margin: 1%;
-  border-radius: 3%;
-  width: 98%;
-  height: var(--medidas-divs);
-  background: var(--cor-divs);
- }
+    & .projetos1 {
+        float: left;
+        gap: 10px;
+        margin: 1%;
+        border-radius: 20px;
+        width: 98%;
+        height: var(--medidas-divs);
+        background: #f1f1f1;
+    }
+
+    & .projetos2 {
+        float: left;
+        gap: 10px;
+        margin: 1%;
+        border-radius: 20px;
+        width: 98%;
+        height: var(--medidas-divs);
+        background: #f1f1f1;
+    }
+
+    & .projetos3 {
+        float: left;
+        gap: 10px;
+        margin: 1%;
+        border-radius: 20px;
+        width: 98%;
+        height: var(--medidas-divs);
+        background: #f1f1f1;
+    }
+
+    & .projetos4 {
+        float: left;
+        gap: 10px;
+        margin: 1%;
+        border-radius: 20px;
+        width: 98%;
+        height: var(--medidas-divs);
+        background: #f1f1f1;
+    }
 }
 
 .setup1 {
- margin: 0.9% 1% 1% 1%;
- border-radius: 6%;
+    margin: 1% 1% 1% 1%;
+    border-radius: 20px;
 }
 
 .button {
- background-color: var(--cor-botao);
- color: #ffffff;
- border-radius: 5%;
- padding: 5px;
- border: 3px solid var(--cor-borda);
+    font-size: 15px;
+    background-color: purple;
+    color: #f1f1f1;
+    border-radius: 10px;
+    padding: 5px;
+    border: 5px solid #f1f1f1;
 }

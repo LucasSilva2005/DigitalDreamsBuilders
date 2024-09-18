@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anúncios de Produtos</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <h1>Anúncios de Produtos</h1>
   <div id="product-list"></div>
@@ -18,14 +20,14 @@
   <script>
     // Configuração do Firebase
     const firebaseConfig = {
-    apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
-    authDomain: 'digital-dreams-builders.firebaseapp.com',
-    databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
-    projectId: 'digital-dreams-builders',
-    storageBucket: 'digital-dreams-builders.appspot.com',
-    messagingSenderId: '116614795521',
-    appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
-   }
+      apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
+      authDomain: 'digital-dreams-builders.firebaseapp.com',
+      databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
+      projectId: 'digital-dreams-builders',
+      storageBucket: 'digital-dreams-builders.appspot.com',
+      messagingSenderId: '116614795521',
+      appId: '1:116614795521:web:5c1b2432f9c55cb93e4b00'
+    }
 
     // Inicializando o Firebase
     firebase.initializeApp(firebaseConfig);
@@ -60,4 +62,5 @@
     window.onload = loadProducts;
   </script>
 </body>
+
 </html>

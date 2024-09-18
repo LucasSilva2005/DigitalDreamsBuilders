@@ -1,39 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postar Anúncio</title>
     <link rel="stylesheet" href="anuncio.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastrar anúncio | Mercado Livre</title>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Postar Anúncio</h1>
-        <form id="form-postar-anuncio">
-            <div class="form-group">
-                <label for="titulo">Título</label>
-                <input type="text" id="titulo" name="titulo" required>
+    <header>
+        <div class="container">
+            <img src="/assets/logo.png" alt="Mercado Livre" class="logo">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">
+                <h1>Cadastrar anúncio</h1>
+                <div class="progress-bar">
+                    <div class="progress-step active">Informações básicas</div>
+                    <div class="progress-step">Detalhes do produto</div>
+                    <div class="progress-step">Fotos e preço</div>
+                    <div class="progress-step">Revisão e publicação</div>
+                </div>
+                <form id="anuncioForm">
+                    <div class="step active" id="step1">
+                        <h2>Informações básicas</h2>
+                        <div class="form-group">
+                            <label for="titulo">Título do anúncio</label>
+                            <input type="text" id="titulo" name="titulo" required>
+                            <div class="error" id="tituloError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="eletronicos">Eletrônicos</option>
+                                <option value="moda">Moda</option>
+                                <option value="casa">Casa e Decoração</option>
+                            </select>
+                            <div class="error" id="categoriaError"></div>
+                        </div>
+                    </div>
+                    <div class="step" id="step2">
+                        <h2>Detalhes do produto</h2>
+                        <div class="form-group">
+                            <label for="marca">Marca</label>
+                            <input type="text" id="marca" name="marca">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelo">Modelo</label>
+                            <input type="text" id="modelo" name="modelo">
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado do produto</label>
+                            <select id="estado" name="estado" required>
+                                <option value="novo">Novo</option>
+                                <option value="usado">Usado</option>
+                            </select>
+                            <div class="error" id="estadoError"></div>
+                        </div>
+                    </div>
+                    <div class="step" id="step3">
+                        <h2>Fotos e preço</h2>
+                        <div class="form-group">
+                            <label for="imageUpload">Fotos do produto</label>
+                            <div class="image-upload" id="imageUpload">
+                                <p>Clique ou arraste as imagens aqui</p>
+                                <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="image-preview" id="imagePreview"></div>
+                            <div class="error" id="imageError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="preco">Preço (R$)</label>
+                            <input type="number" id="preco" name="preco" step="0.01" required>
+                            <div class="error" id="precoError"></div>
+                        </div>
+                    </div>
+                    <div class="step" id="step4">
+                        <h2>Revisão e publicação</h2>
+                        <div class="form-group">
+                            <label for="descricao">Descrição detalhada</label>
+                            <textarea id="descricao" name="descricao" rows="5" required></textarea>
+                            <div class="error" id="descricaoError"></div>
+                        </div>
+                        <div id="resumoAnuncio"></div>
+                    </div>
+                    <div class="navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display:none;">Voltar</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Próximo</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">Publicar anúncio</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="descricao">Descrição</label>
-                <textarea id="descricao" name="descricao" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="preco">Preço</label>
-                <input type="number" id="preco" name="preco" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label for="imagem">Imagem</label>
-                <input type="file" id="imagem" name="imagem" accept="image/*" required>
-            </div>
-            <button type="submit">Postar Anúncio</button>
-        </form>
-    </div>
-    
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
-    <script src="scripts.js"></script>
+        </div>
+    </main>
 </body>
+<script src="anuncio.js"></script>
 </html>

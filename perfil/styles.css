@@ -1,77 +1,78 @@
 /* styles.css */
 body {
- font-family: Arial, sans-serif;
- background-color: #f4f4f4;
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8efef;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    /* background-color: black; */
+    /* margin: 0; */
 }
 
 .container {
- background: white;
- padding: 20px;
- border-radius: 8px;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- width: 100%;
- max-width: 600px;
+    background: transparent;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
 h1 {
- margin-bottom: 20px;
+    font-size: 25px;
 }
 
 .profile-section {
- margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .profile-section h2 {
- margin-bottom: 15px;
+    font-size: 20px;
 }
 
 img#profile-pic {
- max-width: 150px;
- max-height: 150px;
- border-radius: 50%;
- display: block;
- margin-bottom: 10px;
+    width: 150px; /* Defina a largura da imagem */
+    height: 150px; /* Defina a altura da imagem */
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Garante que a imagem se ajuste corretamente */
 }
 
 input[type="file"] {
- display: block;
- margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 button {
- padding: 10px 20px;
- border: none;
- border-radius: 4px;
- background-color: #007BFF;
- color: white;
- cursor: pointer;
- margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
- background-color: #0056b3;
+    transition: 0.4s;
+    background-color: #000000;
 }
 
 .form-group {
- margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 label {
- display: block;
- margin-bottom: 5px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="password"],
 textarea {
- width: 100%;
- padding: 10px;
- border: 1px solid #ddd;
- border-radius: 4px;
- box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }

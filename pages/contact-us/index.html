@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fale Conosco</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fale Conosco</title>
 
-    <link rel="stylesheet" href="./contact-us.css" />
-    <link rel="stylesheet" href="../../index.css" />
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <header>
-      <a href="/index.html" id="logo-container">
-        <img src="../../assets/logo.png" alt="DDB Logo" />
-        <span class="mobile-hidden">Digital Dream Builders</span>
-      </a>
-      <nav>
-        <a href="../contact-us/index.html">Sobre Nós</a>
-        <a href="../how-it-works/index.html">Como funciona</a>
-        <a href="">Fale conosco</a>
-      </nav>
-    </header>
+  <link rel="stylesheet" href="./contact-us.css" />
+  <link rel="stylesheet" href="../../index.css" />
+</head>
 
-    <div class="wrapper-main">
-      <main class="main">
-        <section class="section-1">
-          <div class="title-0">
-            <h1>QUER NOS AJUDAR A CONSTRUIR A DDB?</h1>
-            <h2>Preencha o formulário e deixe sua sugestão</h2>
-          </div>
-        </section>
-      </main>
+<body>
+  <header>
+    <a href="/index.html" id="logo-container">
+      <img src="../../assets/logo.png" alt="DDB Logo" />
+      <span class="mobile-hidden">Digital Dream Builders</span>
+    </a>
+    <nav>
+      <a href="../contact-us/index.html">Sobre Nós</a>
+      <a href="../how-it-works/index.html">Como funciona</a>
+      <a href="">Fale conosco</a>
+    </nav>
+  </header>
 
+    <main class="main">
+      <section class="section-1">
+        <div class="title-0">
+          <h1>QUER NOS AJUDAR A CONSTRUIR A DDB?<br>Preencha o formulário e deixe sua sugestão</h1>
+        </div>
+      </section>
+    </main>
+
+    <!-- <div class="wrapper-main"> -->
       <div class="box">
+        <img class="dashboard" src="/assets/dashboard.png" alt="">      
         <form action="../response-to-forms/index.html">
           <div class="campo-forms">
             <div class="campo">
-              <label for="nome">Nome:</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome"
-                required
-              />
-            </div>
-            <div class="campo">
-              <label for="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu email"
-                required
-              />
-            </div>
-            <div class="campo">
-              <label for="mensagem">Mensagem:</label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                rows="4"
-                placeholder="Digite sua mensagem"
-                required
-              ></textarea>
-            </div>
-            <button type="submit">ENVIAR</button>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
           </div>
-        </form>
-      </div>
+          <div class="campo">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required />
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
+          </div>
+          <button type="submit">ENVIAR</button>
+        </div>
+      </form>
     </div>
+  <!-- </div> -->
 
-    <footer>
-      <small>DDB - 2024. Todos os direitos reservados.</small>
-    </footer>
-  </body>
+  <footer>
+    <small>DDB - 2024. Todos os direitos reservados.</small>
+  </footer>
+</body>
+
 </html>

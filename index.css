@@ -17,8 +17,16 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.918);
 }
-
+header {
+  background-color: rgba(0, 0, 0, 0.808);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 /* mobile */
 @media screen and (max-width: 767px) {
   #description-container {
@@ -142,3 +150,12 @@ body {
     flex-direction: row;
   }
 }
+.rt{
+  color: #f1f1f1;
+}
+footer{
+	font-size: 12px;
+	background-color: transparent !important;
+}
+
+
