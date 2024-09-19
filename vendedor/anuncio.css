@@ -1,8 +1,36 @@
+:root {
+    --ml-yellow: #C035F0;
+    --ml-blue: #4B0082;
+    --ml-dark-blue: #9400D3;
+    --ml-light-gray: #9400D3;
+    --ml-gray: #666;
+    --ml-border-color: #e6e6e6;
+}
+body {
+    font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--ml-light-gray);
+    color: #000000;
+}
+header {
+    background-color: var(--ml-yellow);
+    padding: 10px 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0);
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo {
+    width: 134px;
+}
 main {
     padding: 20px 0;
 }
 .card {
-    background-color: #a149d0;
+    background-color: #9400D3;
     border-radius: 6px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
     padding: 24px;
