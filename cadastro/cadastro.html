@@ -56,16 +56,16 @@
       </form>
     </div>
 
-    <!-- Firebase App e Database SDKs -->
+    <!-- Firebase App e Authentication SDKs -->
     <script type="module">
+      // Importações do Firebase
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js';
-      import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js';
+      import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js';
 
-      // Configuração do Firebase
+      // Configurações do Firebase
       const firebaseConfig = {
         apiKey: 'AIzaSyBxVY9aeTO0LJP92zG4WGfsIY-U99w6sWI',
         authDomain: 'digital-dreams-builders.firebaseapp.com',
-        databaseURL: 'https://digital-dreams-builders-default-rtdb.firebaseio.com',
         projectId: 'digital-dreams-builders',
         storageBucket: 'digital-dreams-builders.appspot.com',
         messagingSenderId: '116614795521',
@@ -74,45 +74,65 @@
 
       // Inicializa o Firebase
       const app = initializeApp(firebaseConfig);
-      const database = getDatabase(app);
+      const auth = getAuth(app);
 
-      // Função para salvar dados no banco de dados
-      function salvarDados(userId, email, senha) {
-        set(ref(database, 'users/' + userId), {
-          email: email,
-          senha: senha
-        })
-        .then(() => {
-          console.log('Dados salvos com sucesso!');
-        })
-        .catch((error) => {
-          console.error('Erro ao salvar dados: ', error);
-        });
+      // Função para validar a senha com base nos critérios
+      function validarSenha(senha) {
+        const minLength = senha.length >= 8;
+        const uppercase = /[A-Z]/.test(senha);
+        const specialChar = /[@#\-_$%^&+=§!\?]/.test(senha);
+
+        // Atualiza o feedback visual
+        document.getElementById('minLength').style.color = minLength ? 'green' : 'red';
+        document.getElementById('uppercase').style.color = uppercase ? 'green' : 'red';
+        document.getElementById('specialChar').style.color = specialChar ? 'green' : 'red';
+
+        return minLength && uppercase && specialChar;
       }
 
-      // Adiciona um ouvinte de evento ao formulário
+      // Função para salvar os dados de autenticação no Firebase Authentication
+      function salvarUsuario(email, senha) {
+        createUserWithEmailAndPassword(auth, email, senha)
+          .then((userCredential) => {
+            // Usuário criado com sucesso
+            const user = userCredential.user;
+            alert('Cadastro realizado com sucesso!');
+            console.log('Usuário cadastrado:', user);
+          })
+          .catch((error) => {
+            console.error('Erro ao cadastrar: ', error);
+            alert('Erro ao cadastrar. Tente novamente.');
+          });
+      }
+
+      // Ouvinte para o envio do formulário
       const signupForm = document.getElementById('signup-form');
       signupForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Evita o envio automático do formulário
+        event.preventDefault(); // Evita o envio automático
 
-        // Obtém os dados do formulário
+        // Obtém os valores dos campos
         const email = document.getElementById('email').value;
         const senha = document.getElementById('password').value;
 
-        // Verifica se os campos estão preenchidos
-        if (email && senha) {
-          // Gerar um ID de usuário aleatório
-          const userId = Math.random().toString(36).substring(2, 15);
+        // Validação da senha
+        if (!validarSenha(senha)) {
+          alert('A senha não atende aos requisitos. Por favor, corrija.');
+          return; // Impede o envio se a senha for inválida
+        }
 
-          // Salva os dados no Firebase
-          salvarDados(userId, email, senha);
-
-          // Exibir uma mensagem de sucesso
-          alert('Cadastro realizado com sucesso!');
+        // Se a senha for válida, salva os dados no Firebase Authentication
+        if (email) {
+          salvarUsuario(email, senha);
         } else {
-          alert('Por favor, preencha todos os campos.');
+          alert('Por favor, preencha todos os campos corretamente.');
         }
       });
+
+      // Ouvinte para verificar a senha em tempo real
+      document.getElementById('password').addEventListener('input', (event) => {
+        validarSenha(event.target.value);
+      });
+
     </script>
   </body>
 </html>
